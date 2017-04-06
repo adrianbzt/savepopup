@@ -58,7 +58,6 @@ fileNameUser.onclick = function () {
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
     modal.style.display = "block";
-    modal.removeAttributeNS();
 }
 
 function checkIfLowerThan10(value) {
@@ -85,6 +84,7 @@ btnSaveTo.onclick = function () {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
     modal.style.display = "none";
+    modal.html('');
 }
 
 // When the user clicks anywhere outside of the modal, close it
