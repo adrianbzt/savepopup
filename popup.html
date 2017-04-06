@@ -1,0 +1,78 @@
+<html>
+<head>
+    <META HTTP-EQUIV="EXPIRES" CONTENT="-1"/>
+    <link rel="stylesheet" href="popup.css">
+
+
+</head>
+<body>
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="container">
+            <span class="header"><h2><b>SAVE</b> REPORT</h2></span>
+        </div>
+        <div class="container">
+            <span class="header"><h4>You can choose a folder to save to. Your default folder is Featured.</h4></span>
+        </div>
+        <div class="container" autofocus>
+            <span class="header">
+                <input type="text" size=30 autofocus id="file_name_text_user" value="">
+            </span>
+        </div>
+
+        <div class="container">
+            <span class="header">
+                <input type="checkbox" id="include_date_save_report">
+                <label for="include_date_save_report">Add current date to file name (dd.mm.yyyy)</label>
+            </span>
+        </div>
+
+        <div class="container">
+            <span class="header">
+                <input type="button" value="save to a different folder" id="save_to">
+            </span>
+            <span class="header">
+                <input type="button" value="save" id="save_report">
+            </span>
+        </div>
+
+        <div class="container" id="folders_div">
+            <span class="folders_span" id="folders_list">
+                <input type="radio" id="folder_favorites" name="folders" checked>
+                <label class="new_folder_label" for="folder_favorites">Featured</label>
+                <input type="radio" id="folder_games" name="folders">
+                <label class="new_folder_label" for="folder_games">GAMES</label>
+                <input type="radio" id="folder_sales" name="folders">
+                <label class="new_folder_label" for="folder_sales">SALES</label>
+                <input type="radio" id="folder_netprofit" name="folders">
+                <label class="new_folder_label" for="folder_netprofit">NET PROFIT</label>
+            </span>
+
+        </div>
+
+        <div class="container" id="new_folder_div">
+            <span class="new_folder" id="new_folder_span">
+                <input type="text" size=30 autofocus id="new_folder_text" value="">
+            </span>
+
+            <span class="new_folder">
+                <input type="button" value="new folder" id="new_folder_btn">
+            </span>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
