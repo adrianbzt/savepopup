@@ -58,6 +58,7 @@ fileNameUser.onclick = function () {
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
     modal.style.display = "block";
+    modal.removeAttributeNS();
 }
 
 function checkIfLowerThan10(value) {
