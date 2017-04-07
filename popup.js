@@ -1,34 +1,32 @@
 // Get the modal
-var modal = document.getElementById('myModal');
-
-// Get Folders
-var folders = document.getElementById("folders_div");
+var modal = document.getElementById('saveReportModal');
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the save to button; allows you to select a folder
-var btnSaveTo = document.getElementById("save_to");
-
-// Get the new folder id
-var newFolder = document.getElementById("new_folder_div");
-
-var folderList = document.getElementById("folders_list");
-
-var newFolderText = document.getElementById("new_folder_text");
-
-var newFolderSpan = document.getElementById("new_folder_span");
-
-var btnNewFolder = document.getElementById("new_folder_btn");
-
-// Get the ad date to file name
-var addDateToFielName = document.getElementById("include_date_save_report");
-
-// Get the file name id field
-var fileNameUser = document.getElementById("file_name_text_user");
+var btn = document.getElementById("saveReportButton");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
+
+var folders = document.getElementById("folders");
+
+var btnSaveTo = document.getElementById("chooseDifferentFolder");
+
+var newFolder = document.getElementById("newFolderSection");
+
+var folderList = document.getElementById("foldersList");
+
+var newFolderText = document.getElementById("newFolderText");
+
+var newFolderSpan = document.getElementById("newFolderSpan");
+
+var btnNewFolder = document.getElementById("newFolderButton");
+
+var addDateToFielName = document.getElementById("includeDateInFileName");
+
+var fileNameUser = document.getElementById("fileNameTextUser");
+
+var newFolderWarning = document.getElementById("newFolderWarningMsg");
+
 
 addDateToFielName.onclick = function () {
 
@@ -84,15 +82,14 @@ btnSaveTo.onclick = function () {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
     modal.style.display = "none";
-
-
-    document.getElementsByClassName('modal-content').innerHTML("");
+    console.log(document.getElementsByClassName("modal-content")[0]);
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
+        console.log(document.getElementsByClassName("modal-content")[0]);
     }
 }
 
@@ -105,7 +102,8 @@ btnNewFolder.onclick = function () {
     var newFolderValue = newFolderText.value.toUpperCase();
 
     if (newFolderValue.length >= 3) {
-        var test = Array.from(document.getElementsByClassName('new_folder_label'));
+        newFolderWarning.innerHTML = '';
+        var test = Array.from(document.getElementsByClassName('newFolderLabel'));
         var existingValues = [];
 
         test.forEach(function (element) {
@@ -114,14 +112,16 @@ btnNewFolder.onclick = function () {
 
         var alreadyPresent = existingValues.indexOf(newFolderValue);
 
-        if (newFolderValue.length >= 3 && alreadyPresent == -1) {
+        if (alreadyPresent == -1) {
             var new_id = "folder_" + newFolderValue.toLocaleLowerCase();
             btnNewFolder.value = 'Add New Folder';
             newFolderText.value = "";
-            folderList.innerHTML += "<input type='radio' id=" + new_id + " name='folders' checked>  <label class='new_folder_label' for=" + new_id + "> " + newFolderValue + "</label>";
+            folderList.innerHTML += "<input type='radio' id=" + new_id + " name='folders' checked>  <label class='newFolderLabel' for=" + new_id + "> " + newFolderValue + "</label>";
         } else {
-            console.log('fail; you cannot add it');
+            newFolderWarning.innerHTML = 'Folder already present!';
         }
+    } else {
+        newFolderWarning.innerHTML = 'Minimum 3 characters';
     }
 
 

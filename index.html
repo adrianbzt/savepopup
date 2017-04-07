@@ -3,67 +3,77 @@
     <META HTTP-EQUIV="EXPIRES" CONTENT="-1"/>
     <link rel="stylesheet" href="popup.css">
 
-
 </head>
 <body>
 <!-- Trigger/Open The Modal -->
-<button id="myBtn">SAVE REPORT</button>
+<button id="saveReportButton">SAVE REPORT</button>
 
 <!-- The Modal -->
-<div id="myModal" class="modal">
+<div id="saveReportModal" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content">
         <span class="close">&times;</span>
+
+
+        <!-- Modal Title -->
         <div class="container">
-            <span class="header"><h2><b>SAVE</b> REPORT</h2></span>
+            <span><h2><b>SAVE</b> REPORT</h2></span>
         </div>
+
+        <!-- Modal Subtitle -->
         <div class="container">
-            <span class="header"><h4>You can choose a folder to save to. Your default folder is Featured.</h4></span>
+            <span><h4>You can choose a folder to save to. Your default folder is Featured.</h4></span>
         </div>
+
+        <!-- Modal Input Text ~ File Name -->
         <div class="container" autofocus>
-            <span class="header">
-                <input type="text" size=30 autofocus id="file_name_text_user" value="">
+            <span>
+                <input type="text" size=30 autofocus id="fileNameTextUser" value="">
             </span>
         </div>
 
+        <!-- Modal Include Checkbox ~ Current Date Field -->
         <div class="container">
-            <span class="header">
-                <input type="checkbox" id="include_date_save_report">
-                <label for="include_date_save_report">Add current date to file name (dd.mm.yyyy)</label>
+            <span>
+                <input type="checkbox" id="includeDateInFileName">
+                <label for="includeDateInFileName">Add current date to file name (dd.mm.yyyy)</label>
             </span>
         </div>
 
+        <!-- Modal Buttons ~ Save/ Save To a Different Folder -->
         <div class="container">
-            <span class="header">
-                <input type="button" value="save to a different folder" id="save_to">
+            <span>
+                <input type="button" value="Choose a different folder" id="chooseDifferentFolder">
             </span>
-            <span class="header">
-                <input type="button" value="save" id="save_report">
+            <span>
+                <input type="button" value="Save Report" id="save_report">
             </span>
         </div>
 
-        <div class="container" id="folders_div">
-            <span class="folders_span" id="folders_list">
+        <!-- Modal Ratio Buttons ~ Folders List -->
+        <div class="container" id="folders">
+            <span id="foldersList">
                 <input type="radio" id="folder_favorites" name="folders" checked>
-                <label class="new_folder_label" for="folder_favorites">Featured</label>
+                <label class="newFolderLabel" for="folder_favorites">Featured</label>
                 <input type="radio" id="folder_games" name="folders">
-                <label class="new_folder_label" for="folder_games">GAMES</label>
+                <label class="newFolderLabel" for="folder_games">GAMES</label>
                 <input type="radio" id="folder_sales" name="folders">
-                <label class="new_folder_label" for="folder_sales">SALES</label>
+                <label class="newFolderLabel" for="folder_sales">SALES</label>
                 <input type="radio" id="folder_netprofit" name="folders">
-                <label class="new_folder_label" for="folder_netprofit">NET PROFIT</label>
+                <label class="newFolderLabel" for="folder_netprofit">NET PROFIT</label>
             </span>
 
         </div>
 
-        <div class="container" id="new_folder_div">
-            <span class="new_folder" id="new_folder_span">
-                <input type="text" size=30 autofocus id="new_folder_text" value="">
+        <div class="container" id="newFolderSection">
+            <span id="newFolderSpan">
+                <input type="text" size=30 autofocus id="newFolderText" value="">
+                <p id="newFolderWarningMsg"></p>
             </span>
 
-            <span class="new_folder">
-                <input type="button" value="new folder" id="new_folder_btn">
+            <span>
+                <input type="button" value="Create a New Folder" id="newFolderButton">
             </span>
 
 

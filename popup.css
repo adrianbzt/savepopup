@@ -36,27 +36,28 @@
     cursor: pointer;
 }
 
-#folders_div {
+#folders {
     display: none; /* Hidden by default */
 
 }
 
-#new_folder_div {
+#newFolderSection {
     display: none; /* Hidden by default */
 }
 
-#new_folder {
-
-}
-
-#file_name_text_user {
+#fileNameTextUser {
     text-transform: uppercase;
 }
 
-#new_folder_text {
+#newFolderText {
     text-transform: uppercase;
 }
 
-#new_folder_span {
+#newFolderSpan {
     display: none; /* Hidden by default */
+}
+
+#newFolderWarningMsg{
+    color: red;
+    font-size: 10px;
 }
